@@ -1,14 +1,67 @@
-####
+#### Generate new package file
 
-learna init
+```
+yarn create react-app piccaso --template typescript
+```
 
-####
+#### root settings
+
+```
+// .prettierrc
 
 {
-"packages": [
-"packages/*"
-],
-"npmClient": "yarn",
-"useWorkspaces": true,
-"version": "independent"
+  "semi": true,
+  "tabWidth": 4,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": true
 }
+```
+
+#### ES Lint setup
+
+```
+yarn add -W -D eslint-config-prettier eslint-plugin-prettier prettier
+
+```
+
+#### linter startup
+
+```
+yarn eslint --init
+yarn add -W -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+```
+
+#### .eslintrc.json
+
+```
+//
+module.exports = {
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+    }
+};
+
+
+```

@@ -1,0 +1,9 @@
+{
+    "folders": [
+        {
+            "path": './packages/balko'
+        },{
+            "path": './packages/lotus'
+        },
+    ]
+}
