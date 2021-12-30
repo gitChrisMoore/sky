@@ -1,3 +1,19 @@
+#### Workflow for adding anoter internal package
+
+````
+yarn create react-app PACKAGENAME --template typescript
+create components folder
+remove uncessary files
+configure index.tsx to import new component
+configure package.json
+"main": "./src/index/tsx"
+lerna bootstrap
+config craco to add path
+packages.push(path.join(__dirname, '../PACKAGENAME'));
+
+```
+
+
 #### Generate new package file
 
 ```
@@ -86,3 +102,12 @@ module.exports = {
 };
 
 ```
+
+
+#### Netlify Monorepo Deploy
+
+```
+In
+
+```
+````

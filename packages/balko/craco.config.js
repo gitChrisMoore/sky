@@ -5,7 +5,8 @@ const { default: postcss } = require('postcss');
 const packages = [];
 packages.push(path.join(__dirname, '../lotus'));
 packages.push(path.join(__dirname, '../piccaso'));
-
+packages.push(path.join(__dirname, '../manatee'));
+console.log('packages ', packages);
 module.exports = {
     webpack: {
         configure: (webpackConfig, arg) => {
