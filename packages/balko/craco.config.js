@@ -1,5 +1,6 @@
 const path = require('path');
 const { getLoader, loaderByName } = require('@craco/craco');
+const { default: postcss } = require('postcss');
 
 const packages = [];
 packages.push(path.join(__dirname, '../lotus'));
