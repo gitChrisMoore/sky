@@ -65,3 +65,24 @@ module.exports = {
 
 
 ```
+
+#### Tailwind Installer
+
+```
+install -D tailwindcss postcss autoprefixer
+yarn tailwindcss init -p
+
+```
+
+remember to add the external library to the tailwind path of the consuming package directory
+
+```
+module.exports = {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', '../piccaso/src/**/*.{js,jsx,ts,tsx}'],
+    theme: {
+        extend: {}
+    },
+    plugins: []
+};
+
+```
