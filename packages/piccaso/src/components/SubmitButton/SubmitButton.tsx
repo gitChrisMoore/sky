@@ -14,7 +14,8 @@ const SubmitButton: React.FC<Props> = (props) => {
             <button
                 className="grow bg-violet-600 py-2 text-slate-200 rounded-xl border-2 border-hidden /
                            hover:bg-violet-800 hover:border-2 hover:border-hidden/
-                           focus:border-2 focus:border-violet-800">
+                           focus:border-2 focus:border-violet-800"
+                type="submit">
                 {''}
                 {label}
             </button>

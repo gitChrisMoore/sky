@@ -20,7 +20,7 @@ const BottomNavBar = () => {
     const dashboardPath = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="transition-all duration-500"
             viewBox="0 0 20 20"
             fill="currentColor">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -39,7 +39,7 @@ const BottomNavBar = () => {
     const scanPath = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="transition-all duration-500"
             viewBox="0 0 20 20"
             fill="currentColor">
             <path
@@ -63,7 +63,7 @@ const BottomNavBar = () => {
     const accountPath = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="transition-all duration-500"
             viewBox="0 0 20 20"
             fill="currentColor">
             <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
@@ -87,7 +87,7 @@ const BottomNavBar = () => {
     const userPath = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="transition-all duration-500"
             viewBox="0 0 20 20"
             fill="currentColor">
             <path
@@ -111,16 +111,15 @@ const BottomNavBar = () => {
                 <button
                     key={navItem.label}
                     onClick={() => handleNavStateChange(navItem.label)}
-                    className="w-full block py-1  text-center hover:bg-blue-200 hover:text-blue-800 transition duration-300">
+                    className="w-full block py-1  text-center hover:bg-slate-200 transition duration-300">
                     <div
-                        // className="bg-slate-300 rounded-full w-16 py-0.5 mt-0.5 mx-auto"
-                        className={` w-16 py-0.5 mt-0.5 mx-auto \
-                              ${navState === navItem.label ? 'bg-slate-300 rounded-full  ' : ''} \
+                        className={`transition-all duration-300 w-16 py-0.5 mt-0.5 mx-auto rounded-full  \
+                              ${navState === navItem.label ? 'bg-slate-300   ' : ''} \
                               focus:outline-indigo-600 focus:bg-indigo-50`}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             // className="w-5 h-5 my-1 mx-auto stroke-slate-600 fill-transparent"
-                            className={`w-5 h-5 my-1 mx-auto \
+                            className={`transistion-all duration-300 w-5 h-5 my-1 mx-auto \
                               ${
                                   navState === navItem.label
                                       ? ' stroke-slate-600 fill-transparent'
