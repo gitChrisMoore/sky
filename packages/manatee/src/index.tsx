@@ -1,3 +1,3 @@
 import { createAddress } from './components/domain/SimpleText';
-
-export { createAddress };
+import { StateDictionary } from './components/StateDictionary';
+export { createAddress, StateDictionary };
