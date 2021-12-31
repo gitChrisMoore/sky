@@ -13,6 +13,8 @@ interface Props {
     timer?: number;
 }
 
+// TODO: add additional colors
+
 const Burnt: React.FC<Props> = (props) => {
     const { snacks, setSnacks, timer = 4 } = props;
 
@@ -22,11 +24,8 @@ const Burnt: React.FC<Props> = (props) => {
     };
 
     const handleRemove = () => {
-        console.log('handleRemove', snacks);
         const newSnacks = snacks.filter((t: Snack) => t.addedTime >= filterTime());
-        console.log('newSnacks', newSnacks);
         setSnacks(newSnacks);
-        console.log('newSnacks', newSnacks);
     };
 
     useEffect(() => {
@@ -46,15 +45,20 @@ const Burnt: React.FC<Props> = (props) => {
             <div className=" fixed bottom-2 right-2">
                 {snacks.map((snack, i) => (
                     //
-                    <div className="flex rounded-full">
+                    <div className="flex ">
                         <div
                             key={snack.id}
-                            className="animate-wiggle linear animation-fill-forwards mb-1 border-2 /
-                                      flex shadow-md opacity-90">
-                            <button onClick={() => console.log('toast delete')}>X</button>
-                            <div>
-                                <p className="animate-wiggle h-18 bg-yellow-400">{snack.title}</p>
-                                <p className="bg-lime-500">{snack.description}</p>
+                            className="bg-green-100 rounded-full outline outline-2 / 
+                                flex border-2 border-white shadow-lg max-w-md /
+                                 justify-items-start opacity-90 text-sm /
+                                 animate-wiggle linear animation-fill-forwards mb-2 ">
+                            {''}
+
+                            <div className=" bg-slate-500 rounded-full ml-2 my-1 px-2 text-gray-50">
+                                {snack.title}
+                            </div>
+                            <div className="rounded-full  my-1 px-2 text-slate-500">
+                                {snack.description}
                             </div>
                         </div>
                     </div>
