@@ -1,10 +1,16 @@
+import React from 'react';
 import { TextInputField, SelectInputField } from '@sky/piccaso';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { StateDictionary } from '@sky/manatee';
 
+interface PhoneFormValues {
+    phoneNumber: string;
+    state: string;
+}
+
 const PhoneForm = () => {
-    const handleSubmit = async (formValues: any) => {
+    const handleSubmit = async (formValues: PhoneFormValues) => {
         //
         console.log('handleSubmit ', formValues);
     };
@@ -23,7 +29,8 @@ const PhoneForm = () => {
 
     const formik = useFormik({
         initialValues: {
-            phoneNumber: ''
+            phoneNumber: '',
+            state: ''
         },
         validationSchema: validationSchema,
         onSubmit: handleSubmit

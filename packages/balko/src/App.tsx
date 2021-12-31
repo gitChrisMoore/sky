@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextInputField, SubmitButton, Snackbar, BottomNavBar } from '@sky/piccaso';
 import PhoneForm from './cultivate/PhoneForm';
 
