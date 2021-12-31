@@ -9,18 +9,22 @@ module.exports = {
                 '-1': '-1'
             },
             keyframes: {
-                wiggle: {
-                    '0%': { opacity: '0' },
-                    '20%': { opacity: '1' },
-                    '60%': { opacity: '1' },
-                    '100%': { opacity: '0' }
+                keyout: {
+                    '0%': { opacity: '1' },
+                    '50%': { opacity: '0' }
                 },
                 fadeIn: {
                     '0%': {
+                        opacity: '1'
+                    },
+                    '1%': {
+                        opacity: '1'
+                    },
+                    '8%': {
                         opacity: '0'
                     },
                     '100%': {
-                        opacity: '1'
+                        opacity: '0'
                     }
                 },
                 'fade-in-down': {
@@ -35,7 +39,7 @@ module.exports = {
                 }
             },
             animation: {
-                wiggle: 'wiggle 6s ease-in-out'
+                wiggle: 'fadeIn 60.1s ease-out'
             }
         }
     },

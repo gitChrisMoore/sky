@@ -10,28 +10,29 @@ interface Snack {
 interface Props {
     snacks: Array<any>;
     setSnacks: ([]) => void;
+    timer?: number;
 }
 
 const Burnt: React.FC<Props> = (props) => {
-    const { snacks, setSnacks } = props;
+    const { snacks, setSnacks, timer = 4 } = props;
 
-    const handleRemove = (snack: Snack) => {
-        const seconds = 5000;
-        const currentTime = new Date(new Date().getTime() - seconds);
-        console.log(snack);
-        console.log(currentTime);
-        const newSnacks = snacks.filter((t: Snack) => t.addedTime >= currentTime);
-        console.log('handleRemove snacks', snacks);
-        console.log('handleRemove newSnack', newSnacks);
+    const filterTime = () => {
+        const milliseconds = timer * 1000;
+        return new Date(new Date().getTime() - milliseconds);
+    };
+
+    const handleRemove = () => {
+        console.log('handleRemove', snacks);
+        const newSnacks = snacks.filter((t: Snack) => t.addedTime >= filterTime());
+        console.log('newSnacks', newSnacks);
         setSnacks(newSnacks);
+        console.log('newSnacks', newSnacks);
     };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (snacks.length) {
-                handleRemove(snacks[0]);
-            }
-        }, 200);
+            if (snacks.length) handleRemove();
+        }, 8000);
 
         return () => {
             clearInterval(interval);
@@ -42,19 +43,19 @@ const Burnt: React.FC<Props> = (props) => {
         <div className="">
             {''}
             Hi there, this is burnt
-            <div className=" fixed bottom-1 right-1">
+            <div className=" fixed bottom-2 right-2">
                 {snacks.map((snack, i) => (
                     //
-                    //
-                    <div
-                        key={snack.id}
-                        // className={`${styles.notification} ${styles.toast} ${styles[position]}`}
-                        // style={{ backgroundColor: toast.backgroundColor }}>
-                        className="animate-wiggle linear forwards mb-1 border-2 shadow-md opacity-90 max-h-52 w-80 translateX       bg-slate-600">
-                        <button onClick={() => console.log('toast delete')}>X</button>
-                        <div>
-                            <p className="h-18 bg-yellow-400">{snack.title}</p>
-                            <p className="bg-lime-500">{snack.description}</p>
+                    <div className="flex rounded-full">
+                        <div
+                            key={snack.id}
+                            className="animate-wiggle linear animation-fill-forwards mb-1 border-2 /
+                                      flex shadow-md opacity-90">
+                            <button onClick={() => console.log('toast delete')}>X</button>
+                            <div>
+                                <p className="animate-wiggle h-18 bg-yellow-400">{snack.title}</p>
+                                <p className="bg-lime-500">{snack.description}</p>
+                            </div>
                         </div>
                     </div>
                 ))}
