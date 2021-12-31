@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInputField, SubmitButton, Snackbar } from '@sky/piccaso';
+import { TextInputField, SubmitButton, Snackbar, BottomNavBar } from '@sky/piccaso';
 import PhoneForm from './cultivate/PhoneForm';
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
             </div>
             <div>
                 <PhoneForm />
+            </div>
+            <div>
+                <BottomNavBar />
             </div>
         </div>
     );
