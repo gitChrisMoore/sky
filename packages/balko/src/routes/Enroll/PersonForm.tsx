@@ -1,17 +1,11 @@
 import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
+import { IPerson } from '@sky/manatee';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
 
-interface PersonFormValues {
-    firstName: string;
-    lastName: string;
-    dateofBirth: string;
-    ssnIdentity: string;
-}
-
 export function PersonForm() {
-    const handleSubmit = async (formValues: PersonFormValues) => {
+    const handleSubmit = async (formValues: IPerson) => {
         console.log('formValues', formValues);
     };
 
