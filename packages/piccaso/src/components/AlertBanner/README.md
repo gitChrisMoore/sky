@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import { AlertBanner, RegularModal } from '@sky/piccaso';
+#### Use in parent component
 
-function Home() {
+```
     const [alertBanner, setAlertBanner] = useState(false);
 
     const handleShowAlertBanner = () => {
         setAlertBanner(true);
     };
 
-    return (
-        //
-        <>
-            <div className="App"> Home Home</div>
+```
 
+#### Button to open the modal
+
+```
             <AlertBanner
-                // title="Bold"
+                title="Bold"
                 description="This is the longer form"
                 alertBanner={alertBanner}
                 setAlertBanner={setAlertBanner}></AlertBanner>
@@ -22,8 +21,5 @@ function Home() {
             <button type="button" onClick={handleShowAlertBanner}>
                 Show Alert
             </button>
-        </>
-    );
-}
 
-export default Home;
+```

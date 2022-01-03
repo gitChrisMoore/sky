@@ -5,5 +5,14 @@ import Snackbar from './components/Snackbar/Snackbar';
 import SelectInputField from './components/SelectInputField/SelectInputField';
 import BottomNavBar from './components/BottomNavBar/BottomNavBar';
 import RegularModal from './components/RegularModal/RegularModal';
+import AlertBanner from './components/AlertBanner/AlertBanner';
 
-export { TextInputField, SubmitButton, Snackbar, SelectInputField, BottomNavBar, RegularModal };
+export {
+    TextInputField,
+    SubmitButton,
+    Snackbar,
+    SelectInputField,
+    BottomNavBar,
+    RegularModal,
+    AlertBanner
+};
