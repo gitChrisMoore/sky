@@ -6,6 +6,8 @@ import SelectInputField from './components/SelectInputField/SelectInputField';
 import BottomNavBar from './components/BottomNavBar/BottomNavBar';
 import RegularModal from './components/RegularModal/RegularModal';
 import AlertBanner from './components/AlertBanner/AlertBanner';
+import TopAppBar from './components/TopAppBar/TopAppBar';
+import LeftNavDrawer from './components/LeftNavDrawer/LeftNavDrawer';
 
 export {
     TextInputField,
@@ -14,5 +16,7 @@ export {
     SelectInputField,
     BottomNavBar,
     RegularModal,
-    AlertBanner
+    AlertBanner,
+    TopAppBar,
+    LeftNavDrawer
 };

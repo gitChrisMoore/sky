@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton, SelectInputField } from '@sky/piccaso';
 import { StateDictionary } from '@sky/manatee';
+import PageTemplate from 'src/components/PageTemplate';
 
 interface AddressFormValues {
     address1: string;
@@ -14,6 +15,8 @@ interface AddressFormValues {
 }
 
 export function AddressForm() {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
     const handleSubmit = async (formValues: AddressFormValues) => {
         console.log('formValues', formValues);
     };
@@ -47,29 +50,43 @@ export function AddressForm() {
     });
 
     return (
-        <FormikProvider value={formik}>
-            <Form onSubmit={formik.handleSubmit}>
-                <Field id="address1" name="address1" label="Address 1" component={TextInputField} />
-                <Field id="address2" name="address2" label="Address 2" component={TextInputField} />
-                <Field id="city" name="city" label="City" component={TextInputField} />
-                <Field
-                    id="state"
-                    name="state"
-                    label="State"
-                    component={SelectInputField}
-                    option_list={handleStatesOptions()}
-                />
-                <Field
-                    id="postalCode"
-                    name="postalCode"
-                    label="Zip Code"
-                    component={TextInputField}
-                />
+        <PageTemplate pageTitle="Personal Address">
+            <FormikProvider value={formik}>
+                <Form onSubmit={formik.handleSubmit}>
+                    <Field
+                        id="address1"
+                        name="address1"
+                        label="Address 1"
+                        component={TextInputField}
+                    />
+                    <Field
+                        id="address2"
+                        name="address2"
+                        label="Address 2"
+                        component={TextInputField}
+                    />
+                    <Field id="city" name="city" label="City" component={TextInputField} />
+                    <Field
+                        id="state"
+                        name="state"
+                        label="State"
+                        component={SelectInputField}
+                        option_list={handleStatesOptions()}
+                    />
+                    <Field
+                        id="postalCode"
+                        name="postalCode"
+                        label="Zip Code"
+                        component={TextInputField}
+                    />
 
-                <SubmitButton id="submit" label="submit">
-                    Continue
-                </SubmitButton>
-            </Form>
-        </FormikProvider>
+                    <div className="mt-2">
+                        <SubmitButton id="submit" label="submit">
+                            Continue
+                        </SubmitButton>
+                    </div>
+                </Form>
+            </FormikProvider>
+        </PageTemplate>
     );
 }

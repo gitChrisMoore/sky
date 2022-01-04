@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertBanner, RegularModal } from '@sky/piccaso';
+import AppBar from './Cultivate/AppBar';
 
 function Home() {
     const [alertBanner, setAlertBanner] = useState(false);
@@ -11,6 +12,7 @@ function Home() {
     return (
         //
         <>
+            <AppBar></AppBar>
             <div className="App"> Home Home</div>
 
             <AlertBanner
