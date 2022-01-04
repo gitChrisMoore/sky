@@ -20,7 +20,7 @@ const NavTemplate: React.FC<Props> = (props) => {
             <TopAppBar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
             <LeftNavDrawer isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}>
-                <h2 className=" font-bold mx-2 pt-2 leading-normal text-slate-800">
+                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">
                     {/* Primary Nav */}
                     {'Enrollment Flow'}
                 </h2>

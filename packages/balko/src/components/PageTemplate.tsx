@@ -4,7 +4,7 @@ import NavTemplate from './NavTemplate';
 
 type Props = {
     pageTitle: string;
-    children?: React.ReactNode;
+    children: React.ReactNode;
 };
 
 const PageTemplate: React.FC<Props> = (props) => {
