@@ -8,6 +8,7 @@ import RegularModal from './components/RegularModal/RegularModal';
 import AlertBanner from './components/AlertBanner/AlertBanner';
 import TopAppBar from './components/TopAppBar/TopAppBar';
 import LeftNavDrawer from './components/LeftNavDrawer/LeftNavDrawer';
+import LeftNavDrawerItem from './components/LeftNavDrawerItem/LeftNavDrawerItem';
 
 export {
     TextInputField,
@@ -18,5 +19,6 @@ export {
     RegularModal,
     AlertBanner,
     TopAppBar,
-    LeftNavDrawer
+    LeftNavDrawer,
+    LeftNavDrawerItem
 };

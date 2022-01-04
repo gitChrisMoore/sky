@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 interface Props {
     to: string;
-    title?: string;
+    title: string;
 }
 
-const NavItem: React.FC<Props> = (props) => {
+const LeftNavDrawerItem: React.FC<Props> = (props) => {
     const { to, title } = props;
 
     return (
@@ -30,4 +30,4 @@ const NavItem: React.FC<Props> = (props) => {
     );
 };
 
-export default NavItem;
+export default LeftNavDrawerItem;

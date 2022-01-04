@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
+import PageTemplate from 'src/components/PageTemplate';
 
 interface PhoneFormValues {
     phoneNumber: string;
@@ -25,19 +26,21 @@ export function PhoneForm() {
     });
 
     return (
-        <FormikProvider value={formik}>
-            <Form onSubmit={formik.handleSubmit}>
-                <Field
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    label="Phone Number"
-                    component={TextInputField}
-                />
+        <PageTemplate pageTitle="Phone">
+            <FormikProvider value={formik}>
+                <Form onSubmit={formik.handleSubmit}>
+                    <Field
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        label="Phone Number"
+                        component={TextInputField}
+                    />
 
-                <SubmitButton id="submit" label="submit">
-                    Continue
-                </SubmitButton>
-            </Form>
-        </FormikProvider>
+                    <SubmitButton id="submit" label="submit">
+                        Continue
+                    </SubmitButton>
+                </Form>
+            </FormikProvider>
+        </PageTemplate>
     );
 }
