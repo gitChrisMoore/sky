@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { LeftNavDrawer, LeftNavDrawerItem, TopAppBar } from '@sky/piccaso';
 
-type Props = {
-    pageTitle?: string;
-};
-
-const NavTemplate: React.FC<Props> = (props) => {
+const NavTemplate = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const authNavs = [
