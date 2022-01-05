@@ -9,7 +9,7 @@ import AlertBanner from './components/AlertBanner/AlertBanner';
 import TopAppBar from './components/TopAppBar/TopAppBar';
 import LeftNavDrawer from './components/LeftNavDrawer/LeftNavDrawer';
 import LeftNavDrawerItem from './components/LeftNavDrawerItem/LeftNavDrawerItem';
-
+import Card from './components/Card/Card';
 export {
     TextInputField,
     SubmitButton,
@@ -20,5 +20,6 @@ export {
     AlertBanner,
     TopAppBar,
     LeftNavDrawer,
-    LeftNavDrawerItem
+    LeftNavDrawerItem,
+    Card
 };

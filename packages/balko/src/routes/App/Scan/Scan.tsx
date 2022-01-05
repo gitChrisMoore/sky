@@ -6,7 +6,7 @@ const Scan = () => {
     const title = 'Scan';
 
     return (
-        <AppTemplate>
+        <AppTemplate pageTitle={title}>
             {''}
             {title}
         </AppTemplate>

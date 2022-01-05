@@ -6,7 +6,7 @@ const Profile = () => {
     const title = 'Profile';
 
     return (
-        <AppTemplate>
+        <AppTemplate pageTitle={title}>
             {''}
             {title}
         </AppTemplate>

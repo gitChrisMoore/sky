@@ -13,12 +13,10 @@ const AppTemplate: React.FC<Props> = (props) => {
     return (
         <>
             <NavTemplate />
-            <div className="mx-auto pt-6 px-4 max-w-md justify-center ">
-                <h2 className="text-2xl font-normal leading-normal mt-0 mb-4 text-slate-800">
-                    {pageTitle}
-                </h2>
-                {props.children}
+            <div className="text-2xl mx-auto font-semibold leading-normal bg-slate-100 mt-0 pl-6 pb-2  text-slate-800">
+                {pageTitle}
             </div>
+            <div className="mx-auto pt-3 px-4 max-w-md justify-center ">{props.children}</div>
             <BottomNavBar />
         </>
     );
