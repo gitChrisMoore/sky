@@ -3,7 +3,7 @@ import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { IPerson } from '@sky/manatee';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
-import PageTemplate from 'src/components/PageTemplate';
+import PageTemplate from 'src/components/pages/PageTemplate';
 
 export function PersonForm() {
     const handleSubmit = async (formValues: IPerson) => {

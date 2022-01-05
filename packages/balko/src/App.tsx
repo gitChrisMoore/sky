@@ -1,13 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Dashboard } from './routes/app/dashbaord/Dashboard';
-import Page1 from './routes/Cultivate/Page1';
+
+// Auth
+import { LoginForm } from './routes/Auth/Login/LoginForm';
+import { SignupForm } from './routes/Auth/Signup/Signup';
+// Enroll
 import { AddressForm } from './routes/Enroll/AddressForm';
 import { PersonForm } from './routes/Enroll/PersonForm';
 import { PhoneForm } from './routes/Enroll/PhoneForm';
-import Home from './routes/Home';
-import { LoginForm } from './routes/Login/LoginForm';
-import { SignupForm } from './routes/Signup/Signup';
+// App
+import Account from './routes/App/Account/Account';
+import Dashboard from './routes/App/Dashboard/Dashboard';
+import Profile from './routes/App/Profile/Profile';
+import Scan from './routes/App/Scan/Scan';
 
 function App() {
     return (
@@ -17,8 +22,7 @@ function App() {
             <Router>
                 <Routes>
                     {/* Default Route */}
-                    <Route path="*" element={<Home />} />
-                    <Route path="/page1" element={<Page1 />} />
+                    <Route path="*" element={<LoginForm />} />
                     {/* Auth */}
                     <Route path="/auth/login" element={<LoginForm />} />
                     <Route path="/auth/signin" element={<LoginForm />} />
@@ -28,7 +32,10 @@ function App() {
                     <Route path="/enroll/addressform" element={<AddressForm />} />
                     <Route path="/enroll/personform" element={<PersonForm />} />
                     {/* App */}
+                    <Route path="/app/account" element={<Account />} />
                     <Route path="/app/dashboard" element={<Dashboard />} />
+                    <Route path="/app/profile" element={<Profile />} />
+                    <Route path="/app/scan" element={<Scan />} />
                 </Routes>
             </Router>
         </div>

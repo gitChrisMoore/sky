@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
-import PageTemplate from 'src/components/PageTemplate';
+import PageTemplate from 'src/components/pages/PageTemplate';
 
 interface PhoneFormValues {
     phoneNumber: string;

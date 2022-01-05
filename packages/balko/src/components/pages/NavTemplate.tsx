@@ -9,32 +9,41 @@ const NavTemplate: React.FC<Props> = (props) => {
     const { pageTitle } = props;
     const [isNavOpen, setIsNavOpen] = useState(false);
 
-    const primaryNavs = [
+    const authNavs = [
+        { path: '/auth/login', name: 'Login' },
+        { path: '/auth/signup', name: 'Signup' }
+    ];
+    const enrollNavs = [
         { path: '/enroll/addressform', name: 'Address' },
         { path: '/enroll/personform', name: 'Person' },
         { path: '/enroll/phoneform', name: 'Phone' }
     ];
-    const authNavs = [
-        { path: '/auth/login', name: 'Login' },
-        { path: '/auth/signup', name: 'Signup' }
+    const appNavs = [
+        { path: '/app/account', name: 'Account' },
+        { path: '/app/dashboard', name: 'Dashboard' },
+        { path: '/app/profile', name: 'Profile' },
+        { path: '/app/scan', name: 'Scan' }
     ];
     return (
         <>
             <TopAppBar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
             <LeftNavDrawer isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}>
-                {/* Primary Nav */}
-                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">
-                    {'Enrollment Flow'}
-                </h2>
-                {primaryNavs?.map((t) => {
+                {/* Auth */}
+                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">{'Enrollment'}</h2>
+                {authNavs.map((t) => {
                     return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
                 })}
-                {/* Enrollment Nav */}
+                {/* Enroll */}
+                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">{'Enrollment'}</h2>
+                {enrollNavs.map((t) => {
+                    return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
+                })}
+                {/* App */}
                 <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">
                     {'External Routes'}
                 </h2>
-                {authNavs?.map((t) => {
+                {appNavs.map((t) => {
                     return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
                 })}{' '}
             </LeftNavDrawer>

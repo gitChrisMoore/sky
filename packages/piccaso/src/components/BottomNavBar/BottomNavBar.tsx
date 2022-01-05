@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { ElementType, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+interface INavItem {
+    label: string;
+    route: string;
+    inactiveIcon: ElementType;
+    activeIcon: ElementType;
+}
 
 const BottomNavBar = () => {
-    const [navState, setNavState] = useState('Dashboard');
+    const { state: activeLocation } = useLocation();
+    const navigate = useNavigate();
 
-    const handleNavStateChange = (navPage: string) => {
-        setNavState(navPage);
-        console.log(navPage);
+    const handleactiveNavChange = (nav: INavItem) => {
+        navigate(nav.route, { state: nav.label });
     };
 
     const dashboardPathInactive = (
@@ -99,10 +107,30 @@ const BottomNavBar = () => {
     );
 
     const navList = [
-        { label: 'Dashboard', inactiveIcon: dashboardPathInactive, activeIcon: dashboardPath },
-        { label: 'Scan', inactiveIcon: scanPathInactive, activeIcon: scanPath },
-        { label: 'Account', inactiveIcon: accountPathInactive, activeIcon: accountPath },
-        { label: 'Profile', inactiveIcon: profilePathInactive, activeIcon: userPath }
+        {
+            label: 'Dashboard',
+            route: '/app/dashboard',
+            inactiveIcon: dashboardPathInactive,
+            activeIcon: dashboardPath
+        },
+        {
+            label: 'Scan',
+            route: '/app/scan',
+            inactiveIcon: scanPathInactive,
+            activeIcon: scanPath
+        },
+        {
+            label: 'Account',
+            route: '/app/account',
+            inactiveIcon: accountPathInactive,
+            activeIcon: accountPath
+        },
+        {
+            label: 'Profile',
+            route: '/app/profile',
+            inactiveIcon: profilePathInactive,
+            activeIcon: userPath
+        }
     ];
 
     return (
@@ -110,24 +138,26 @@ const BottomNavBar = () => {
             {navList.map((navItem: any) => (
                 <button
                     key={navItem.label}
-                    onClick={() => handleNavStateChange(navItem.label)}
+                    onClick={() => handleactiveNavChange(navItem)}
                     className="w-full block py-1  text-center hover:bg-slate-200 transition duration-300">
                     <div
                         className={`transition-all duration-300 w-16 py-0.5 mt-0.5 mx-auto rounded-full  \
-                              ${navState === navItem.label ? 'bg-slate-300   ' : ''} \
+                              ${activeLocation === navItem.label ? 'bg-slate-300   ' : ''} \
                               focus:outline-indigo-600 focus:bg-indigo-50`}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             // className="w-5 h-5 my-1 mx-auto stroke-slate-600 fill-transparent"
                             className={`transistion-all duration-300 w-5 h-5 my-1 mx-auto \
                               ${
-                                  navState === navItem.label
+                                  activeLocation === navItem.label
                                       ? ' stroke-slate-600 fill-transparent'
                                       : 'stroke-slate-600 fill-transparent'
                               } \
                               focus:outline-indigo-600 focus:bg-indigo-50`}
                             viewBox="0 0 24 24">
-                            {navState === navItem.label ? navItem.activeIcon : navItem.inactiveIcon}
+                            {activeLocation === navItem.label
+                                ? navItem.activeIcon
+                                : navItem.inactiveIcon}
                         </svg>
                     </div>
                     {navItem.label}

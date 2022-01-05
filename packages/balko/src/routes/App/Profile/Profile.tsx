@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import AppTemplate from 'src/components/AppTemplate';
+import AppTemplate from 'src/components/pages/AppTemplate';
 
-export function Dashboard() {
-    const title = 'Dashboard';
+const Profile = () => {
+    const title = 'Profile';
 
     return (
         <AppTemplate>
@@ -11,4 +11,6 @@ export function Dashboard() {
             {title}
         </AppTemplate>
     );
-}
+};
+
+export default Profile;

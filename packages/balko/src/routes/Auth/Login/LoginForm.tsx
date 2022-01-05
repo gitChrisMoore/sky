@@ -2,15 +2,15 @@ import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
-import PageTemplate from 'src/components/PageTemplate';
+import PageTemplate from '../../../components/pages/PageTemplate';
 
-interface SignupFormValues {
+interface LoginFormValues {
     email: string;
     password: string;
 }
 
-export function SignupForm() {
-    const handleSubmit = async (formValues: SignupFormValues) => {
+export function LoginForm() {
+    const handleSubmit = async (formValues: LoginFormValues) => {
         console.log('formValues', formValues);
     };
 
@@ -33,7 +33,7 @@ export function SignupForm() {
             <div className="py-8 px-4 rounded-2xl shadow-xl ">
                 {/* Custom Header */}
                 <h2 className="text-2xl mt-4 font-normal leading-normal mb-8 text-slate-800">
-                    Sign up
+                    Welcome back!
                 </h2>
                 <FormikProvider value={formik}>
                     <Form onSubmit={formik.handleSubmit}>

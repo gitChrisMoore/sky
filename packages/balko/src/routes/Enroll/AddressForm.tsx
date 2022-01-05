@@ -3,7 +3,7 @@ import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton, SelectInputField } from '@sky/piccaso';
 import { StateDictionary } from '@sky/manatee';
-import PageTemplate from 'src/components/PageTemplate';
+import PageTemplate from 'src/components/pages/PageTemplate';
 
 interface AddressFormValues {
     address1: string;

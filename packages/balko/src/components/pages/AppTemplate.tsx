@@ -1,5 +1,5 @@
 import { BottomNavBar } from '@sky/piccaso';
-import React, { useState } from 'react';
+import React from 'react';
 import NavTemplate from './NavTemplate';
 
 type Props = {
