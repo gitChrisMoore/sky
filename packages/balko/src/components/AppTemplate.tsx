@@ -1,5 +1,5 @@
+import { BottomNavBar } from '@sky/piccaso';
 import React, { useState } from 'react';
-import { LeftNavDrawer, TopAppBar } from '@sky/piccaso';
 import NavTemplate from './NavTemplate';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
     children: React.ReactNode;
 };
 
-const PageTemplate: React.FC<Props> = (props) => {
+const AppTemplate: React.FC<Props> = (props) => {
     const { pageTitle } = props;
 
     return (
@@ -19,8 +19,9 @@ const PageTemplate: React.FC<Props> = (props) => {
                 </h2>
                 {props.children}
             </div>
+            <BottomNavBar />
         </>
     );
 };
 
-export default PageTemplate;
+export default AppTemplate;
