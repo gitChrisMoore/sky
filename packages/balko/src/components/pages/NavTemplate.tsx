@@ -6,7 +6,6 @@ type Props = {
 };
 
 const NavTemplate: React.FC<Props> = (props) => {
-    const { pageTitle } = props;
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const authNavs = [

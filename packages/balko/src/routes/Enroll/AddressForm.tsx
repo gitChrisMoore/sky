@@ -15,8 +15,6 @@ interface AddressFormValues {
 }
 
 export function AddressForm() {
-    const [isNavOpen, setIsNavOpen] = useState(false);
-
     const handleSubmit = async (formValues: AddressFormValues) => {
         console.log('formValues', formValues);
     };

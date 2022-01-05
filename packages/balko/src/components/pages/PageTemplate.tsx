@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { LeftNavDrawer, TopAppBar } from '@sky/piccaso';
+import React from 'react';
 import NavTemplate from './NavTemplate';
 
 type Props = {
