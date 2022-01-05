@@ -5,6 +5,7 @@ import { AddressForm } from './routes/Enroll/AddressForm';
 import { PersonForm } from './routes/Enroll/PersonForm';
 import { PhoneForm } from './routes/Enroll/PhoneForm';
 import Home from './routes/Home';
+import { LoginForm } from './routes/Login/LoginForm';
 
 function App() {
     return (
@@ -16,6 +17,9 @@ function App() {
                     {/* Default Route */}
                     <Route path="*" element={<Home />} />
                     <Route path="/page1" element={<Page1 />} />
+                    {/* Auth */}
+                    <Route path="/auth/login" element={<LoginForm />} />
+                    {/* Enroll */}
                     <Route path="/enroll/phoneform" element={<PhoneForm />} />
                     <Route path="/enroll/addressform" element={<AddressForm />} />
                     <Route path="/enroll/personform" element={<PersonForm />} />
