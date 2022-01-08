@@ -23,7 +23,8 @@
         "start": "PORT=3003 craco start",
         "build": "craco build",
         "test": "craco test",
-        "eject": "craco eject"
+        "eject": "craco eject",
+        "coverage": "craco test --coverage --watchAll"
     },
     "eslintConfig": {
         "extends": [
@@ -46,6 +47,7 @@
     },
     "devDependencies": {
         "@craco/craco": "^6.4.3",
+        "@testing-library/react-hooks": "^7.0.2",
         "@typescript-eslint/eslint-plugin": "^5.8.1",
         "@typescript-eslint/parser": "^5.8.1",
         "autoprefixer": "^9",

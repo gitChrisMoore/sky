@@ -13,7 +13,9 @@
     },
     "scripts": {
         "start": "lerna exec --scope @sky/balko -- yarn start",
-        "build": "lerna exec --scope @sky/balko -- yarn build"
+        "build": "lerna exec --scope @sky/balko -- yarn build",
+        "test": "lerna exec --scope @sky/balko -- yarn test",
+        "coverage": "lerna exec --scope @sky/balko -- yarn coverage"
     },
     "workspaces": {
         "packages": [

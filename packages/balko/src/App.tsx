@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Auth
 import { LoginForm } from './routes/Auth/Login/LoginForm';
-import { SignupForm } from './routes/Auth/Signup/Signup';
+import SignupPage from './routes/Auth/Signup/SignupPage';
+
 // Enroll
-import { AddressForm } from './routes/Enroll/AddressForm';
-import { PersonForm } from './routes/Enroll/PersonForm';
-import { PhoneForm } from './routes/Enroll/PhoneForm';
+import PrimaryAddressPage from './routes/Enroll/PrimaryAddress/PrimaryAddressPage';
+import PersonalDetailsPage from './routes/Enroll/PersonalDetails/PersonalDetailsPage';
+import PhoneContactPage from './routes/Enroll/PhoneContact/PhoneContactPage';
+
 // App
 import Account from './routes/App/Account/Account';
 import Dashboard from './routes/App/Dashboard/Dashboard';
@@ -27,11 +29,11 @@ function App() {
                     {/* Auth */}
                     <Route path="/auth/login" element={<LoginForm />} />
                     <Route path="/auth/signin" element={<LoginForm />} />
-                    <Route path="/auth/signup" element={<SignupForm />} />
+                    <Route path="/auth/signup" element={<SignupPage />} />
                     {/* Enroll */}
-                    <Route path="/enroll/phoneform" element={<PhoneForm />} />
-                    <Route path="/enroll/addressform" element={<AddressForm />} />
-                    <Route path="/enroll/personform" element={<PersonForm />} />
+                    <Route path="/enroll/phoneform" element={<PhoneContactPage />} />
+                    <Route path="/enroll/addressform" element={<PrimaryAddressPage />} />
+                    <Route path="/enroll/personform" element={<PersonalDetailsPage />} />
                     {/* App */}
                     <Route path="/app/account" element={<Account />} />
                     <Route path="/app/dashboard" element={<Dashboard />} />
