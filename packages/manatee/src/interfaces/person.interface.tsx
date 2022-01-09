@@ -1,6 +1,10 @@
 export type IPerson = {
-    firstName: string;
-    lastName: string;
-    dateofBirth: string;
-    ssnIdentity: string;
+    id?: string;
+    user_id?: string;
+    firstName?: string;
+    middleName?: string;
+    lastName?: string;
+    dateofBirth?: string;
+    ssnIdentity?: string;
+    gender?: string;
 };

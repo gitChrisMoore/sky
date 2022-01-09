@@ -10,6 +10,7 @@ import TopAppBar from './components/TopAppBar/TopAppBar';
 import LeftNavDrawer from './components/LeftNavDrawer/LeftNavDrawer';
 import LeftNavDrawerItem from './components/LeftNavDrawerItem/LeftNavDrawerItem';
 import Card from './components/Card/Card';
+import LoadSpinner from './components/LoadSpinner/LoadSpinner';
 export {
     TextInputField,
     SubmitButton,
@@ -21,5 +22,6 @@ export {
     TopAppBar,
     LeftNavDrawer,
     LeftNavDrawerItem,
-    Card
+    Card,
+    LoadSpinner
 };

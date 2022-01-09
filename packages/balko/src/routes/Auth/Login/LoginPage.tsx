@@ -1,20 +1,21 @@
 import React from 'react';
 import PageTemplate from '../../../components/pages/PageTemplate';
-import { SignupForm } from './SignupForm';
+import { LoginForm } from './LoginForm';
 import { useAuth } from '@sky/manatee';
 import { useNavigate } from 'react-router-dom';
 
-interface SignupPageValues {
+interface LoginPageValues {
+    user_id?: string;
     email: string;
     password: string;
 }
 
-const SignupPage = () => {
+const LoginPage = () => {
     const navigate = useNavigate();
-    const { signUp } = useAuth();
+    const { signIn } = useAuth();
 
-    const handleSubmit = async (formValues: SignupPageValues) => {
-        const { error } = await signUp(formValues);
+    const handleSubmit = async (formValues: LoginPageValues) => {
+        const { error } = await signIn(formValues);
         error ? alert(error.message) : navigate('/enroll/personform');
         // console.log('handle Submit', formValues);
     };
@@ -24,12 +25,12 @@ const SignupPage = () => {
             <div className="py-8 px-4 rounded-2xl shadow-xl ">
                 {/* Custom Header */}
                 <h2 className="text-2xl mt-4 font-normal leading-normal mb-8 text-slate-800">
-                    Sign up
+                    Welcome back!
                 </h2>
-                <SignupForm handleSubmit={handleSubmit} />
+                <LoginForm onSubmit={handleSubmit} />
             </div>
         </PageTemplate>
     );
 };
 
-export default SignupPage;
+export default LoginPage;

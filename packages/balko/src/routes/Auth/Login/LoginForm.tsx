@@ -2,18 +2,8 @@ import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
-import PageTemplate from '../../../components/pages/PageTemplate';
 
-interface LoginFormValues {
-    email: string;
-    password: string;
-}
-
-export function LoginForm() {
-    const handleSubmit = async (formValues: LoginFormValues) => {
-        console.log('formValues', formValues);
-    };
-
+export function LoginForm({ handleSubmit }: any) {
     const validationSchema = yup.object({
         email: yup.string().required(),
         password: yup.string().required()
@@ -29,32 +19,14 @@ export function LoginForm() {
     });
 
     return (
-        <PageTemplate>
-            <div className="py-8 px-4 rounded-2xl shadow-xl ">
-                {/* Custom Header */}
-                <h2 className="text-2xl mt-4 font-normal leading-normal mb-8 text-slate-800">
-                    Welcome back!
-                </h2>
-                <FormikProvider value={formik}>
-                    <Form onSubmit={formik.handleSubmit}>
-                        <Field
-                            id="email"
-                            name="email"
-                            label="Email address"
-                            component={TextInputField}
-                        />
-                        <Field
-                            id="password"
-                            name="password"
-                            label="Password"
-                            component={TextInputField}
-                        />
-                        <SubmitButton id="submit" label="submit">
-                            Login
-                        </SubmitButton>
-                    </Form>
-                </FormikProvider>
-            </div>
-        </PageTemplate>
+        <FormikProvider value={formik}>
+            <Form onSubmit={formik.handleSubmit}>
+                <Field id="email" name="email" label="Email address" component={TextInputField} />
+                <Field id="password" name="password" label="Password" component={TextInputField} />
+                <SubmitButton id="submit" label="submit">
+                    Login
+                </SubmitButton>
+            </Form>
+        </FormikProvider>
     );
 }

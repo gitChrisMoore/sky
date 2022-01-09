@@ -11,7 +11,8 @@ const NavTemplate = () => {
     const enrollNavs = [
         { path: '/enroll/addressform', name: 'Address' },
         { path: '/enroll/personform', name: 'Person' },
-        { path: '/enroll/phoneform', name: 'Phone' }
+        { path: '/enroll/phoneform', name: 'Phone' },
+        { path: '/enroll/decision', name: 'Decision' }
     ];
     const appNavs = [
         { path: '/app/account', name: 'Account' },
@@ -35,9 +36,7 @@ const NavTemplate = () => {
                     return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
                 })}
                 {/* App */}
-                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">
-                    {'External Routes'}
-                </h2>
+                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">{'App'}</h2>
                 {appNavs.map((t) => {
                     return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
                 })}{' '}

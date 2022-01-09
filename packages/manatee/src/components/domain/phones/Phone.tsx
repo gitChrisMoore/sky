@@ -1,24 +1,24 @@
-import { IPerson } from '../../../interfaces/person.interface';
+import { IPhone } from '../../../interfaces/phone.interface';
 import { supabase } from '../../data/supabase';
-import { toApiPerson, toUiPerson } from './PersonAdapter';
+import { toApiPhone, toUiPhone } from './PhoneAdapter';
 
-export const createPerson = async (person: IPerson): Promise<[IPerson?, Error?]> => {
+export const createPhone = async (phone: IPhone): Promise<[IPhone?, Error?]> => {
     let error = undefined;
     const { data, error: APIerror } = await supabase
-        .from('persons')
-        .insert(toApiPerson(person))
+        .from('phone_numbers')
+        .insert(toApiPhone(phone))
         .single();
     if (APIerror) {
         error = new Error(APIerror.message);
     }
 
-    return [toUiPerson(data), error];
+    return [toUiPhone(data), error];
 };
 
-export const getMostRecentPerson = async (): Promise<[IPerson?, Error?]> => {
+export const getMostRecentPhone = async (): Promise<[IPhone?, Error?]> => {
     let error = undefined;
     const { data, error: APIerror } = await supabase
-        .from('persons')
+        .from('phone_numbers')
         .select()
         .order('id', { ascending: false })
         .limit(1)
@@ -27,5 +27,5 @@ export const getMostRecentPerson = async (): Promise<[IPerson?, Error?]> => {
         error = new Error(APIerror.message);
     }
 
-    return [toUiPerson(data), error];
+    return [toUiPhone(data), error];
 };
