@@ -4,11 +4,9 @@ import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
 import { IPhone } from '@sky/manatee';
 
-export function PhoneContactForm({ onSubmit }: any) {
-    const handleSubmit = async (formValues: IPhone) => {
-        onSubmit(formValues);
-    };
+type ISubmitFormType = { handleSubmit: (formValues: IPhone) => Promise<void> };
 
+export function PhoneContactForm({ handleSubmit }: ISubmitFormType) {
     const validationSchema = yup.object({
         phoneNumber: yup.string().required()
     });

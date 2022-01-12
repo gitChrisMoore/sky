@@ -16,7 +16,7 @@ const PersonalDetailsPage = () => {
 
     return (
         <PageTemplate pageTitle="Personal">
-            <PersonForm onSubmit={handleSubmit} />
+            <PersonForm handleSubmit={handleSubmit} />
         </PageTemplate>
     );
 };

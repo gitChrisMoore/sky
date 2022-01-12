@@ -4,11 +4,9 @@ import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
 import { IPersonForm } from './personalDetailsForm.interface';
 
-export function PersonForm({ onSubmit }: any) {
-    const handleSubmit = async (formValues: IPersonForm) => {
-        onSubmit(formValues);
-    };
+type ISubmitFormType = { handleSubmit: (formValues: IPersonForm) => Promise<void> };
 
+export function PersonForm({ handleSubmit }: ISubmitFormType) {
     const validationSchema = yup.object({
         firstName: yup.string().required(),
         lastName: yup.string().required(),

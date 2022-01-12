@@ -3,7 +3,13 @@ import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
 
-export function SignupForm({ handleSubmit }: any) {
+interface AuthForm {
+    email: string;
+    password: string;
+}
+type ISubmitFormType = { handleSubmit: (formValues: AuthForm) => Promise<void> };
+
+export function SignupForm({ handleSubmit }: ISubmitFormType) {
     const validationSchema = yup.object({
         email: yup.string().required(),
         password: yup.string().required()

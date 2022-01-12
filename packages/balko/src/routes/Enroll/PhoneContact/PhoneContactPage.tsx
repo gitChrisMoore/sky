@@ -15,7 +15,7 @@ const PhoneContactPage = () => {
 
     return (
         <PageTemplate pageTitle="Phone Contact">
-            <PhoneContactForm onSubmit={handleSubmit} />
+            <PhoneContactForm handleSubmit={handleSubmit} />
         </PageTemplate>
     );
 };
