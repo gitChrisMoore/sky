@@ -11,6 +11,8 @@ import LeftNavDrawer from './components/LeftNavDrawer/LeftNavDrawer';
 import LeftNavDrawerItem from './components/LeftNavDrawerItem/LeftNavDrawerItem';
 import Card from './components/Card/Card';
 import LoadSpinner from './components/LoadSpinner/LoadSpinner';
+import CreditCard from './components/CreditCard/CreditCard';
+
 export {
     TextInputField,
     SubmitButton,
@@ -23,5 +25,6 @@ export {
     LeftNavDrawer,
     LeftNavDrawerItem,
     Card,
-    LoadSpinner
+    LoadSpinner,
+    CreditCard
 };

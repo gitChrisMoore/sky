@@ -1,3 +1,9 @@
+#### Add Package to workspace
+
+```
+yarn workspace @sky/balko add -D qrcode.react
+```
+
 #### Workflow for adding anoter internal package
 
 ````

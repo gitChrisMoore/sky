@@ -2,9 +2,9 @@ import React from 'react';
 import { useFormik, FormikProvider, Field, Form } from 'formik';
 import * as yup from 'yup';
 import { TextInputField, SubmitButton } from '@sky/piccaso';
-import { IPersonForm } from './personalDetailsForm.interface';
+import { IPerson } from '@sky/manatee';
 
-type ISubmitFormType = { handleSubmit: (formValues: IPersonForm) => Promise<void> };
+type ISubmitFormType = { handleSubmit: (formValues: IPerson) => Promise<void> };
 
 export function PersonForm({ handleSubmit }: ISubmitFormType) {
     const validationSchema = yup.object({
