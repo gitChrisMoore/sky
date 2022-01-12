@@ -16,7 +16,7 @@ const PrimaryAddressPage = () => {
 
     return (
         <PageTemplate pageTitle="Primary Address">
-            <PrimaryAddressForm onSubmit={handleSubmit} />
+            <PrimaryAddressForm handleSubmit={handleSubmit} />
         </PageTemplate>
     );
 };

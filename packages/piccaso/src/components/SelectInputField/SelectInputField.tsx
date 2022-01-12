@@ -28,7 +28,7 @@ const SelectInputField: React.FC<Props> = (props) => {
                         {...field}
                         {...props}>
                         {option_list.map((option: any) => (
-                            <option key={option.id} value={option.name}>
+                            <option key={option.id} value={option.id}>
                                 {option.name}
                             </option>
                         ))}

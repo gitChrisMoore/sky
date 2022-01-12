@@ -1,12 +1,20 @@
 // Components
 import { StateDictionary } from './components/StateDictionary';
+import { createAccount } from './components/domain/accounts/Account';
 import { createAddress, getMostRecentAddress } from './components/domain/addresses/Address';
 import { createIndividual, getIndividual } from './components/domain/individual/individual';
 import { createPerson, getMostRecentPerson } from './components/domain/persons/Person';
 import { createPhone, getMostRecentPhone } from './components/domain/phones/Phone';
+import {
+    createAccountProduct,
+    getAccountProducts
+} from './components/domain/accountProducts/AccountProduct';
 // Contexts
 import { AuthProvider, useAuth } from './components/contexts/Auth';
 // Interfaces
+
+import { IAccount } from './interfaces/account.interface';
+import { IAccountProduct } from './interfaces/accountProduct.interface';
 import { IAddress } from './interfaces/address.interface';
 import { IIndividual } from './interfaces/individual.interface';
 import { IPerson } from './interfaces/person.interface';
@@ -23,6 +31,9 @@ export {
     createPhone,
     getMostRecentPhone,
     createIndividual,
-    getIndividual
+    getIndividual,
+    getAccountProducts,
+    createAccountProduct,
+    createAccount
 };
-export type { IPerson, IAddress, IPhone, IIndividual };
+export type { IPerson, IAddress, IPhone, IIndividual, IAccountProduct, IAccount };

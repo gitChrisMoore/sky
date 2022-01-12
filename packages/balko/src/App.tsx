@@ -19,7 +19,7 @@ import Account from './routes/App/Account/Account';
 import Dashboard from './routes/App/Dashboard/Dashboard';
 import Profile from './routes/App/Profile/Profile';
 import Scan from './routes/App/Scan/Scan';
-import OpenAccount from './routes/App/OpenAccount/OpenAccount';
+import OpenAccountPage from './routes/App/OpenAccount/OpenAccountPage';
 
 function App() {
     return (
@@ -44,7 +44,7 @@ function App() {
                         {/* App */}
                         <Route path="/app/account" element={<Account />} />
                         <Route path="/app/dashboard" element={<Dashboard />} />
-                        <Route path="/app/openaccount" element={<OpenAccount />} />
+                        <Route path="/app/openaccount" element={<OpenAccountPage />} />
                         <Route path="/app/profile" element={<Profile />} />
                         <Route path="/app/scan" element={<Scan />} />
                     </Routes>

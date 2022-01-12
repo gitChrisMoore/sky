@@ -17,7 +17,7 @@ export const createIndividual = async (
     return [toUiIndividual(data), error];
 };
 
-export const getIndividual = async (individual: IIndividual): Promise<[IIndividual?, Error?]> => {
+export const getIndividual = async (): Promise<[IIndividual?, Error?]> => {
     let error = undefined;
     const { data, error: APIerror } = await supabase
         .from('individuals')

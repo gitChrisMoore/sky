@@ -27,7 +27,7 @@ const LoginPage = () => {
                 <h2 className="text-2xl mt-4 font-normal leading-normal mb-8 text-slate-800">
                     Welcome back!
                 </h2>
-                <LoginForm onSubmit={handleSubmit} />
+                <LoginForm handleSubmit={handleSubmit} />
             </div>
         </PageTemplate>
     );

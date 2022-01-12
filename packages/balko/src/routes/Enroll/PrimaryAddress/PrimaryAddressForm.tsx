@@ -4,11 +4,9 @@ import * as yup from 'yup';
 import { TextInputField, SubmitButton, SelectInputField } from '@sky/piccaso';
 import { StateDictionary, IAddress } from '@sky/manatee';
 
-export function PrimaryAddressForm({ onSubmit }: any) {
-    const handleSubmit = async (formValues: IAddress) => {
-        onSubmit(formValues);
-    };
+type ISubmitFormType = { handleSubmit: (formValues: IAddress) => Promise<void> };
 
+export function PrimaryAddressForm({ handleSubmit }: ISubmitFormType) {
     const handleStatesOptions = () => {
         const stateOptions = StateDictionary.map((state) => {
             return { id: Object.keys(state)[0], name: Object.values(state)[0] };
