@@ -12,6 +12,7 @@ import LeftNavDrawerItem from './components/LeftNavDrawerItem/LeftNavDrawerItem'
 import Card from './components/Card/Card';
 import LoadSpinner from './components/LoadSpinner/LoadSpinner';
 import CreditCard from './components/CreditCard/CreditCard';
+import DecimalInputField from './components/DecimalInputField/DecimalInputField';
 
 export {
     TextInputField,
@@ -26,5 +27,6 @@ export {
     LeftNavDrawerItem,
     Card,
     LoadSpinner,
-    CreditCard
+    CreditCard,
+    DecimalInputField
 };

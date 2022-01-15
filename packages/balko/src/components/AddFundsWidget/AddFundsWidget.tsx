@@ -1,16 +1,49 @@
 import React, { useState } from 'react';
 import { RegularModal } from '@sky/piccaso';
+import { AddFundsForm } from './AddFundsForm';
+import { getAccounts, getIndividual, useAuth } from '@sky/manatee';
 
 const AddFundsWidget = () => {
     const [showModal, setShowModal] = useState(false);
+    const { user } = useAuth();
 
-    const title = 'Title 1';
+    const title = 'Add some money';
     const closeModal = () => {
         setShowModal(false);
     };
     const submitModal = () => {
         setShowModal(false);
         console.log('modal was submmited');
+    };
+    const handleSubmit = async (formValues: { amount: number }) => {
+        setShowModal(false);
+        const [individual] = await getIndividual();
+        const [accounts] = await getAccounts();
+        if (accounts) {
+            const account = accounts[0];
+            const newRequest = {
+                amount: formValues.amount,
+                state_id: 500,
+                stateDescription: 'PENDING_APPROVAL',
+                type: 'FUNDS_ADD',
+                createdBy: user?.id,
+
+                user_id: user?.id,
+                individuals_id: individual?.id,
+                accounts_id: account?.id,
+                accountProducts_id: account?.accountProducts_id,
+
+                balanceDelta: formValues.amount,
+                processed: false,
+                status: 'TEST'
+            };
+            console.log('newRequest', newRequest);
+        }
+
+        // if (user && user.id && individual && individual.id ) {
+
+        // }
+        console.log('handleSubmit', formValues);
     };
 
     return (
@@ -27,6 +60,9 @@ const AddFundsWidget = () => {
                 submitModal={submitModal}
                 showModal={showModal}>
                 {/* Children */}
+                <div className="mx-auto pt-3 px-4 max-w-md justify-center ">
+                    <AddFundsForm handleSubmit={handleSubmit} />
+                </div>
             </RegularModal>
         </div>
     );

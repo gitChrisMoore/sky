@@ -1,6 +1,6 @@
 // Components
 import { StateDictionary } from './components/StateDictionary';
-import { createAccount } from './components/domain/accounts/Account';
+import { createAccount, getAccounts } from './components/domain/accounts/Account';
 import { createAddress, getMostRecentAddress } from './components/domain/addresses/Address';
 import { createIndividual, getIndividual } from './components/domain/individual/individual';
 import { createPerson, getMostRecentPerson } from './components/domain/persons/Person';
@@ -19,6 +19,7 @@ import { IAddress } from './interfaces/address.interface';
 import { IIndividual } from './interfaces/individual.interface';
 import { IPerson } from './interfaces/person.interface';
 import { IPhone } from './interfaces/phone.interface';
+import { ITransaction } from './interfaces/transaction.interface';
 
 export {
     AuthProvider,
@@ -34,6 +35,7 @@ export {
     getIndividual,
     getAccountProducts,
     createAccountProduct,
-    createAccount
+    createAccount,
+    getAccounts
 };
-export type { IPerson, IAddress, IPhone, IIndividual, IAccountProduct, IAccount };
+export type { IPerson, IAddress, IPhone, IIndividual, IAccountProduct, IAccount, ITransaction };
