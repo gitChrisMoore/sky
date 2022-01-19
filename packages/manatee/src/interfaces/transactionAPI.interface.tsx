@@ -1,19 +1,19 @@
-export type ITransaction = {
+export type ITransactionAPI = {
     id?: string;
     amount: number;
-    stateDescription: string;
+    state_description: string;
     type: string;
-    createdBy: string;
+    created_by: string;
     user_id: string;
     individuals_id: string;
     accounts_id: string;
-    accountProducts_id: string;
-    balanceDelta: number;
+    account_products_id: string;
+    balance_delta: number;
     processed: boolean;
     status: string;
     token?: string;
-    effectiveDate?: Date;
-    insertedAt?: Date;
+    effective_date?: Date;
+    inserted_at?: Date;
     state_id?: number;
     source?: string;
     config?: string;

@@ -20,6 +20,10 @@ import { IIndividual } from './interfaces/individual.interface';
 import { IPerson } from './interfaces/person.interface';
 import { IPhone } from './interfaces/phone.interface';
 import { ITransaction } from './interfaces/transaction.interface';
+import { ICurrentBalance } from './interfaces/currentBalance.interface';
+import { ICurrentBalanceAPI } from './interfaces/currentBalanceAPI.interface';
+import { getCurrentBalanceByID } from './components/domain/currentBalances/CurrentBalance';
+import { createTransaction } from './components/domain/transactions/Transaction';
 
 export {
     AuthProvider,
@@ -36,6 +40,18 @@ export {
     getAccountProducts,
     createAccountProduct,
     createAccount,
-    getAccounts
+    getAccounts,
+    getCurrentBalanceByID,
+    createTransaction
 };
-export type { IPerson, IAddress, IPhone, IIndividual, IAccountProduct, IAccount, ITransaction };
+export type {
+    IPerson,
+    IAddress,
+    IPhone,
+    IIndividual,
+    IAccountProduct,
+    IAccount,
+    ITransaction,
+    ICurrentBalance,
+    ICurrentBalanceAPI
+};

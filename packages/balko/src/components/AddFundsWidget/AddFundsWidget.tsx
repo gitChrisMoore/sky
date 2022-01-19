@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RegularModal } from '@sky/piccaso';
 import { AddFundsForm } from './AddFundsForm';
-import { getAccounts, getIndividual, useAuth } from '@sky/manatee';
+import { createTransaction, getAccounts, getIndividual, useAuth } from '@sky/manatee';
 
 const AddFundsWidget = () => {
     const [showModal, setShowModal] = useState(false);
@@ -19,8 +19,13 @@ const AddFundsWidget = () => {
         setShowModal(false);
         const [individual] = await getIndividual();
         const [accounts] = await getAccounts();
-        if (accounts) {
-            const account = accounts[0];
+        if (
+            accounts &&
+            accounts[0].id &&
+            accounts[0].accountProducts_id &&
+            individual &&
+            individual.id
+        ) {
             const newRequest = {
                 amount: formValues.amount,
                 state_id: 500,
@@ -28,16 +33,18 @@ const AddFundsWidget = () => {
                 type: 'FUNDS_ADD',
                 createdBy: user?.id,
 
-                user_id: user?.id,
-                individuals_id: individual?.id,
-                accounts_id: account?.id,
-                accountProducts_id: account?.accountProducts_id,
+                user_id: user.id,
+                individuals_id: individual.id,
+                accounts_id: accounts[0].id,
+                accountProducts_id: accounts[0].accountProducts_id,
 
                 balanceDelta: formValues.amount,
                 processed: false,
                 status: 'TEST'
             };
-            console.log('newRequest', newRequest);
+
+            const [data, error] = await createTransaction(newRequest);
+            error ? alert(error.message) : console.log('created tx, ', data);
         }
 
         // if (user && user.id && individual && individual.id ) {
