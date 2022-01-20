@@ -18,3 +18,21 @@ export const createTransaction = async (
 
     return [toUiTransaction(data), error];
 };
+
+export const getTransactions = async (): Promise<[ITransaction[]?, Error?]> => {
+    let error = undefined;
+    let transactions = undefined;
+    const { data, error: APIerror } = await supabase
+        .from(TBL_NAME)
+        .select('*')
+        .eq('state_description', 'FINAL');
+    if (APIerror) {
+        error = new Error(APIerror.message);
+    }
+    if (data) {
+        transactions = data.map((i) => {
+            return toUiTransaction(i);
+        });
+    }
+    return [transactions, error];
+};

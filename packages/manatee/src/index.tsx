@@ -23,7 +23,7 @@ import { ITransaction } from './interfaces/transaction.interface';
 import { ICurrentBalance } from './interfaces/currentBalance.interface';
 import { ICurrentBalanceAPI } from './interfaces/currentBalanceAPI.interface';
 import { getCurrentBalanceByID } from './components/domain/currentBalances/CurrentBalance';
-import { createTransaction } from './components/domain/transactions/Transaction';
+import { createTransaction, getTransactions } from './components/domain/transactions/Transaction';
 
 export {
     AuthProvider,
@@ -42,7 +42,8 @@ export {
     createAccount,
     getAccounts,
     getCurrentBalanceByID,
-    createTransaction
+    createTransaction,
+    getTransactions
 };
 export type {
     IPerson,
