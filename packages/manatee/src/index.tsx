@@ -3,7 +3,11 @@ import { StateDictionary } from './components/StateDictionary';
 import { createAccount, getAccounts } from './components/domain/accounts/Account';
 import { createAddress, getMostRecentAddress } from './components/domain/addresses/Address';
 import { createIndividual, getIndividual } from './components/domain/individual/individual';
-import { createPerson, getMostRecentPerson } from './components/domain/persons/Person';
+import {
+    createPerson,
+    getMostRecentPerson,
+    getPersonByID
+} from './components/domain/persons/Person';
 import { createPhone, getMostRecentPhone } from './components/domain/phones/Phone';
 import {
     createAccountProduct,
@@ -33,6 +37,7 @@ export {
     StateDictionary,
     createPerson,
     getMostRecentPerson,
+    getPersonByID,
     createPhone,
     getMostRecentPhone,
     createIndividual,

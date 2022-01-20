@@ -20,6 +20,8 @@ const NavTemplate = () => {
         { path: '/app/profile', name: 'Profile' },
         { path: '/app/scan', name: 'Scan' }
     ];
+    const appEmployeeNavs = [{ path: '/app/sale', name: 'Sale' }];
+
     return (
         <>
             <TopAppBar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
@@ -38,6 +40,11 @@ const NavTemplate = () => {
                 {/* App */}
                 <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">{'App'}</h2>
                 {appNavs.map((t) => {
+                    return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
+                })}
+                {/* App: Employee */}
+                <h2 className=" font-bold mx-2 py-2 leading-snug text-slate-800">{'App'}</h2>
+                {appEmployeeNavs.map((t) => {
                     return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
                 })}{' '}
             </LeftNavDrawer>

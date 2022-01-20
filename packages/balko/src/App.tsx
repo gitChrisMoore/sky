@@ -20,6 +20,8 @@ import Dashboard from './routes/App/Dashboard/Dashboard';
 import Profile from './routes/App/Profile/Profile';
 import Scan from './routes/App/Scan/Scan';
 import OpenAccountPage from './routes/App/OpenAccount/OpenAccountPage';
+// App: Employee
+import Sale from './routes/App/Sale/Sale';
 
 function App() {
     return (
@@ -47,6 +49,8 @@ function App() {
                         <Route path="/app/openaccount" element={<OpenAccountPage />} />
                         <Route path="/app/profile" element={<Profile />} />
                         <Route path="/app/scan" element={<Scan />} />
+                        {/* App: Employee */}
+                        <Route path="/app/sale" element={<Sale />} />
                     </Routes>
                 </AuthProvider>
             </Router>

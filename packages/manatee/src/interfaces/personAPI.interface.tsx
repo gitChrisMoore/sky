@@ -1,5 +1,5 @@
 export type IPersonAPI = {
-    id?: string;
+    id?: number;
     user_id?: string;
     first_name: string;
     middle_name?: string;

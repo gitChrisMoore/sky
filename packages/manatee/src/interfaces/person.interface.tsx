@@ -1,5 +1,5 @@
 export type IPerson = {
-    id?: string;
+    id?: number;
     user_id?: string;
     firstName?: string;
     middleName?: string;
